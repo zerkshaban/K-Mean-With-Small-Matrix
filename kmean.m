@@ -19,9 +19,25 @@ data_points_y = data_points(:,2);
 % (Colx, Coly) x and y column of the code vector matrix
 code_vectors_x = code_vectors(:,1);
 code_vectors_y = code_vectors(:,2);
+
+%disp(code_vectors)
+%disp(data_points)
+
+options = foptions();
+%disp(options)
+[idx,C] = kmeans(code_vectors, data_points, options);
+
+%disp(idx)
+disp(C)
             
 % Plotting to analyze at first look how many classes will be there
-plot(data_points_x, data_points_y, '*r', code_vectors_x, code_vectors_y, 'ks')
+%plot(data_points_x, data_points_y, '*r', code_vectors_x, code_vectors_y, 'ks')
+
+% Plotting the clusters after applying kmean clustering on data
+plot(data_points_x, data_points_y, '*r', code_vectors_x, code_vectors_y, 'ks', idx(:,1),idx(:,2),'kx',...
+     'MarkerSize',15,'LineWidth',3) 
+title 'Cluster Assignments and Centroids'
+hold off
 
 
 
