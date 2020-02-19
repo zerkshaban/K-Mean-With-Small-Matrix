@@ -16,13 +16,10 @@ code_vectors = [2 2;
 data_points_x = data_points(:,1);
 data_points_y = data_points(:,2);
 
-% (Colx, Coly) x and y column of the code vector matrix
-code_vectors_x = code_vectors(:,1);
-code_vectors_y = code_vectors(:,2);
+% (Colx, Coly) x and y column of the 
+
+disp(data_points_x)
             
-% Plotting to analyze at first look how many classes will be there
-plot(data_points_x, data_points_y, '*r', code_vectors_x, code_vectors_y, 'ks')
-
-
+plot(data_points(:,1),data_points(:,2),'g*',code_vectors(:,1),code_vectors(:,2),'bo')
 
 
